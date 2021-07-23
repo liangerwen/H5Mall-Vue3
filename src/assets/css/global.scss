@@ -1,0 +1,45 @@
+@import './tailwind.scss';
+@import './app.scss';
+
+:root {
+  // vant变量
+  --van-sidebar-padding: 1rem var(--van-padding-sm);
+  --van-sidebar-selected-text-color: #ee0a24;
+  --van-popover-dark-background-color: rgba(0, 0, 0, 0.9);
+  --van-swipe-indicator-inactive-background-color: #ccc;
+  --van-swipe-indicator-active-background-color: rgb(250, 44, 25);
+  --van-swipe-indicator-inactive-opacity: 0.8;
+  --van-swipe-indicator-size: 0.35rem;
+  --van-orange: #ff983b;
+  --van-search-input-height: 2rem;
+  --van-font-size-md: 1rem;
+
+  //自定义变量
+  --mall-background-color: #f6f6f6;
+  --mall-header-height: 46px;
+  --mall-footer-height: 50px;
+  --mall-2footer-height: 100px;
+  --mall-gradient-red: linear-gradient(to right, #ff6034, #ee0a24);
+}
+
+//vant轮播图active时的样式
+.van-swipe__indicator--active {
+  border-radius: 0.25rem;
+  width: 0.75rem;
+}
+.van-button--default.van-dialog__confirm {
+  color: #fff;
+  background-color: var(--van-sidebar-selected-text-color);
+}
+.van-password-input__item {
+  border-radius: 1rem;
+}
+
+.mall-bg {
+  background-color: var(--mall-background-color);
+}
+.mall-container {
+  width: 100%;
+  height: 100%;
+  overflow: hidden auto;
+}
