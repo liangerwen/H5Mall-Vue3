@@ -28,7 +28,7 @@
 <style lang="scss">
   .mall-line {
     position: relative;
-    z-index: 1;
+    z-index: 0;
     text-align: center;
     margin: 10px 0;
     &::before {

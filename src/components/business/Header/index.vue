@@ -27,7 +27,11 @@
       >
         <template #reference>
           <div class="h-full px-2 flex justify-center items-center"
-            ><van-icon name="weapp-nav" class="text-gray-400" size="20" /> </div
+            ><van-icon
+              name="weapp-nav"
+              class="text-gray-400"
+              size="1.33rem"
+            /> </div
         ></template>
       </van-popover>
     </slot>

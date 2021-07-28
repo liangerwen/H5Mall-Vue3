@@ -17,7 +17,8 @@
         'MallCategory',
         'MallMessage',
         'MallChart',
-        'MallMe'
+        'MallMe',
+        'MallSearchPage'
       ]
       return { CACHE_PAGE }
     }

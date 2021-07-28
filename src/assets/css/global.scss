@@ -13,6 +13,9 @@
   --van-orange: #ff983b;
   --van-search-input-height: 2rem;
   --van-font-size-md: 1rem;
+  --van-submit-bar-button-width: auto;
+  --van-field-icon-size: 1rem;
+  --van-search-padding: 10px 1rem;
 
   //自定义变量
   --mall-background-color: #f6f6f6;
@@ -33,6 +36,10 @@
 }
 .van-password-input__item {
   border-radius: 1rem;
+}
+.van-icon-search {
+  height: 100%;
+  line-height: 1.5rem !important;
 }
 
 .mall-bg {

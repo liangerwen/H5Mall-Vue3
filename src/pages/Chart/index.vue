@@ -65,7 +65,7 @@
                 <van-icon
                   name="shop"
                   color="#e4393c"
-                  size="24"
+                  size="1.6rem"
                   class="mr-2" /><span class="text-sm font-bold">{{
                   chart.shopName
                 }}</span

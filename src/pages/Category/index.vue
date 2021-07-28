@@ -1,7 +1,7 @@
 <template>
   <div class="mall-container overflow-hidden flex flex-col">
     <mall-header back>
-      <mall-search v-model="search.content" @search="search.handle" />
+      <mall-search @focus="search.handle" />
     </mall-header>
     <div class="flex-auto flex border-t overflow-y-auto mb-footer">
       <van-sidebar
@@ -58,15 +58,15 @@
   import { $, setTranslateY } from '@/utils/dom'
   import { Category, getCategory } from '@/http/Category'
   import { HTTP_STATUS } from '@/http/config'
+  import { useRouter } from 'vue-router'
   export default {
     name: 'MallCategory',
     setup() {
+      const router = useRouter()
       //搜索
       const search = reactive({
-        content: '',
-        handle: (val: string) => {
-          console.log(search.content)
-          console.log(val)
+        handle: () => {
+          router.push('/search')
         }
       })
 

@@ -24,7 +24,7 @@
           <h4 class="font-semibold">搜索历史</h4
           ><van-icon
             name="delete-o"
-            size="18"
+            size="1.5rem"
             class="text-gray-300"
             @click="history.delAllHistory"
           />
@@ -131,7 +131,7 @@
 </template>
 
 <script lang="ts">
-  import { onBeforeMount, reactive } from 'vue'
+  import { onActivated, reactive } from 'vue'
   import {
     getSearchHistory,
     addSearchHistory,
@@ -141,6 +141,7 @@
   import { getSearchInfo, Hot, Find } from '@/http/Search'
   import { HTTP_STATUS } from '@/http/config'
   export default {
+    name: 'MallSearchPage',
     setup() {
       enum TabType {
         FIND = 'FIND',
@@ -168,12 +169,10 @@
           Dialog.confirm({
             message: '确定要清空吗？',
             showCancelButton: true
+          }).then(() => {
+            delAllSearchHistory()
+            history.list = getSearchHistory()
           })
-            .then(() => {
-              delAllSearchHistory()
-              history.list = getSearchHistory()
-            })
-            .catch(() => {})
         }
       })
       const search = reactive({
@@ -188,7 +187,7 @@
         }
       })
 
-      onBeforeMount(() => {
+      onActivated(() => {
         getSearchRecommend()
       })
       return { history, search, TabType, searchRecommend }

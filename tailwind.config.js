@@ -50,8 +50,8 @@ module.exports = {
         36: '9rem',
         80: '20rem'
       },
-      maxWidth: {
-        shop: 'calc(100% - 24px)'
+      zIndex: {
+        full: '9999'
       }
     }
   },

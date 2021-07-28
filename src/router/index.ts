@@ -4,6 +4,7 @@ import Category from '@/pages/Category/index.vue'
 import Message from '@/pages/Message/index.vue'
 import Chart from '@/pages/Chart/index.vue'
 import Me from '@/pages/Me/index.vue'
+import Search from '@/pages/Search/index.vue'
 
 export default createRouter({
   // history: createWebHistory(),
@@ -52,7 +53,7 @@ export default createRouter({
     {
       path: '/search',
       name: 'Search',
-      component: () => import('@/pages/Search/index.vue')
+      component: Search
     }
   ]
 })

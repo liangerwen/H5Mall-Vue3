@@ -1,9 +1,8 @@
 # MALL-VUE
 
-[![VueJS Version](https://img.shields.io/badge/vue-3.0.5-green.svg)](https://vue3js.cn/docs/zh/) [![Vant Version](https://img.shields.io/badge/vant-3.1.2-blue.svg)](https://vant-contrib.gitee.io/vant/v3/#/zh-CN) [![Tailwind Version](https://img.shields.io/badge/tailwind-2.2.0-yellow.svg)](https://www.tailwindcss.cn/)
+[![VueJS Version](https://img.shields.io/badge/vue-3.0.5-green.svg)](https://vue3js.cn/docs/zh/) [![Vant Version](https://img.shields.io/badge/vant-3.1.2-blue.svg)](https://vant-contrib.gitee.io/vant/v3/#/zh-CN) [![Vite Version](https://img.shields.io/badge/vite-2.4.2-skyblue.svg)](https://cn.vitejs.dev/) [![Tailwind Version](https://img.shields.io/badge/tailwind-2.2.0-yellow.svg)](https://www.tailwindcss.cn/)
 
-
-> 这是一个基于 VUE3全家桶 + Vant 做的一个电商网站前端项目，使用Vite调试，VueCli打包，欢迎 fork 或 star
+> 这是一个基于 VUE3 全家桶 + Vant 做的一个电商网站前端项目，使用 Vite 调试，VueCli 打包，scss+tailwind 美化样式，axios+mockjs 生成假数据，欢迎 fork 或 star
 
 ## Build Setup
 
@@ -51,8 +50,6 @@ yarn build:prod
 - [x] [注册 SIGNUP PAGE]
 - [x] [商品搜索页面 PRODUCT LIST PAGE]
 
-
-
 ## 未完成
 
 - [x] [商品详情页面 PRODUCT DETAIL PAGE]
@@ -62,4 +59,3 @@ yarn build:prod
 - [x] [反馈页面 FREEBACK PACE]
 - [x] [商家店铺页面 MERCHANT PAGE]
 - [x] [用户页面 USER PAGE]
-

@@ -61,11 +61,12 @@
                 {{ card.evaluation }}+评价 好评率{{ card.highPraise }}
               </p>
               <div class="w-full flex justify-between">
-                <div class="text-gray-400 text-sm flex items-center max-w-shop"
+                <div
+                  class="text-gray-400 text-sm flex items-center mall-shop-text"
                   ><p class="flex-auto van-ellipsis">{{ card.shops }} </p
                   ><van-icon name="arrow" class="w-4" />
                 </div>
-                <van-icon name="cart-o" size="20" color="#e4393c"
+                <van-icon name="cart-o" size="1.33rem" color="#e4393c"
               /></div>
             </div> </div
           ><div v-else class="w-1/2 mx-1.5"></div
@@ -116,11 +117,11 @@
             {{ item.evaluation }}+评价 好评率{{ item.highPraise }}
           </p>
           <div class="flex justify-between w-full">
-            <div class="text-gray-400 flex items-center max-w-shop"
+            <div class="text-gray-400 flex items-center mall-shop-text"
               ><p class="flex-auto van-ellipsis text-xs">{{ item.shops }} </p
               ><van-icon name="arrow" class="w-4 text-xs" />
             </div>
-            <van-icon name="cart-o" size="20" color="#e4393c"
+            <van-icon name="cart-o" size="1.33rem" color="#e4393c"
           /></div>
         </div>
       </div>
@@ -130,7 +131,13 @@
 
 <script lang="ts">
   import { computed, PropType } from 'vue'
-  import { GoodType } from './type'
+  import { GoodListItem, GoodType } from './type'
+
+  interface IProps {
+    type: GoodType
+    list: GoodListItem[]
+  }
+
   export default {
     name: 'MallGoods',
     props: {
@@ -142,7 +149,7 @@
         default: () => []
       }
     },
-    setup(props: any) {
+    setup(props: IProps) {
       const goodList = computed(() => {
         if (props.type === GoodType.CARD) {
           let pList = []
@@ -167,5 +174,8 @@
   }
   .good-card-info {
     width: calc(50% - 0.75rem);
+  }
+  .mall-shop-text {
+    max-width: calc(100% - 22px);
   }
 </style>
