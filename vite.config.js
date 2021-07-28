@@ -1,18 +1,11 @@
 import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
-import { viteMockServe } from 'vite-plugin-mock'
 import babel from 'vite-babel-plugin'
 import { resolve } from 'path'
 
 export default defineConfig({
   base: './',
-  plugins: [
-    babel(),
-    vue(),
-    viteMockServe({
-      supportTs: true
-    })
-  ],
+  plugins: [babel(), vue()],
   build: {
     minify: 'esbuild'
   },

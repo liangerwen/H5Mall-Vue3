@@ -138,8 +138,9 @@
     delAllSearchHistory
   } from '@/utils/storage'
   import { Dialog } from 'vant'
-  import { getSearchInfo, Hot, Find } from '@/http/Search'
+  import { getSearchInfo } from '@/http/Search'
   import { HTTP_STATUS } from '@/http/config'
+  import { Find, Hot } from '@/http/Search/type'
   export default {
     name: 'MallSearchPage',
     setup() {

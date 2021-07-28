@@ -1,6 +1,9 @@
 import { getToken } from '@/utils/storage'
 import axios from 'axios'
 import config from './config'
+import Mock from 'mockjs'
+
+Mock.setup({ timeout: 1000 })
 
 const service = axios.create({
   baseURL: config.base,
@@ -21,7 +24,7 @@ service.interceptors.response.use(
   },
   (err) => {
     if (process.env.NODE_ENV === 'development') {
-      // eslint-disable-next-line no-console
+      // eslint-disable-next-line
       console.log(`err${err}`)
     }
     return Promise.reject(err)

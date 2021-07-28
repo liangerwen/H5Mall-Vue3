@@ -95,17 +95,12 @@
   import { ref, reactive, onActivated, computed, onDeactivated } from 'vue'
   import { GoodListItem, GoodType } from '../../components/business/Goods/type'
   import { useRouter } from 'vue-router'
-  import {
-    getNavImages,
-    getSeckill,
-    Seckill,
-    getMenuInfo,
-    Menu
-  } from '@/http/Home'
+  import { getNavImages, getSeckill, getMenuInfo } from '@/http/Home'
   import { HTTP_STATUS } from '@/http/config'
   import { getRecommendList } from '@/http/GoodList'
   import { parseTimeBucket, parsePercentage, parseAFew } from '@/utils/format'
   import { $loading } from '@/utils/loading'
+  import { Menu, Seckill } from '@/http/Home/type'
   export default {
     name: 'MallHome',
     setup() {

@@ -56,9 +56,10 @@
   import { ref, reactive, onActivated } from 'vue'
   import useTouchMove, { TouchMoveType } from '@/hooks/useTouchMove'
   import { $, setTranslateY } from '@/utils/dom'
-  import { Category, getCategory } from '@/http/Category'
+  import { getCategory } from '@/http/Category'
   import { HTTP_STATUS } from '@/http/config'
   import { useRouter } from 'vue-router'
+  import { Category } from '@/http/Category/type'
   export default {
     name: 'MallCategory',
     setup() {

@@ -180,11 +180,12 @@
   import { onActivated, reactive } from 'vue'
   import { GoodListItem, GoodType } from '@/components/business/Goods/type'
   import { IType } from '@/components/business/FooterBar/index.vue'
-  import { Chart, getChart } from '@/http/Chart'
+  import { getChart } from '@/http/Chart'
   import { getRecommendList } from '@/http/GoodList'
   import { HTTP_STATUS } from '@/http/config'
   import { parseAFew, parsePercentage } from '@/utils/format'
   import { $loading } from '@/utils/loading'
+  import { Chart } from '@/http/Chart/type'
   export default {
     name: 'MallChart',
     setup() {
