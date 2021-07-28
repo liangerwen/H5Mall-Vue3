@@ -34,7 +34,14 @@ const components = {
 
 const install = (Vue: App): void => {
   Object.values(components).forEach((component) => {
-    Vue.component(component.name, component as any)
+    Vue.component(
+      component.name,
+      component as DefineComponent<
+        Record<string, unknown>,
+        Record<string, unknown>,
+        any
+      >
+    )
   })
 }
 

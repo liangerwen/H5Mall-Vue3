@@ -1,4 +1,4 @@
-export function getTranslateValue(dom: any) {
+export function getTranslateValue(dom: HTMLElement) {
   const transform = dom.style.transform
   return transform
     ? transform
@@ -8,17 +8,17 @@ export function getTranslateValue(dom: any) {
     : [0, 0]
 }
 
-export function setTranslateX(dom: any, val: number) {
-  const [_, y] = getTranslateValue(dom)
+export function setTranslateX(dom: HTMLElement, val: number) {
+  const [, y] = getTranslateValue(dom)
   dom.style.transform = `translate(${val}px, ${y}px)`
 }
 
-export function setTranslateY(dom: any, val: number) {
-  const [x, _] = getTranslateValue(dom)
+export function setTranslateY(dom: HTMLElement, val: number) {
+  const [x] = getTranslateValue(dom)
   dom.style.transform = `translate(${x}px, ${val}px)`
 }
 
-export function setTranslate(dom: any, val: number[]) {
+export function setTranslate(dom: HTMLElement, val: number[]) {
   dom.style.transform = `translate(${val[0]}px, ${val[1]}px)`
 }
 

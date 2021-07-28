@@ -41,8 +41,9 @@
       const timer = ref<number | null>(null)
       const scrollHeight = ref(0)
       const show = ref(false)
-      const targetScroll = (e: any) => {
-        show.value = e.target.scrollTop >= 200
+      const targetScroll = (e: Event) => {
+        const target = e.target as HTMLElement
+        show.value = target.scrollTop >= 200
       }
       onMounted(() => {
         const target = document.querySelector(props.target as string)

@@ -37,8 +37,8 @@ export default function (
   const handleTouchStart = (e: TouchEvent) => {
     const target = e.targetTouches[0]
     const [translateX, translateY] = getTranslateValue(dom.value)
-    dom.value = $(domName) as any
-    domBox.value = $(boxName) as any
+    dom.value = $(domName) as HTMLElement
+    domBox.value = $(boxName) as HTMLElement
     offsetY.value =
       dom.value.offsetHeight - domBox.value.offsetHeight > 0
         ? dom.value.offsetHeight - domBox.value.offsetHeight
@@ -75,7 +75,7 @@ export default function (
     beginTranslateY.value = -1
   }
 
-  const handleTouchMove = (e: any) => {
+  const handleTouchMove = (e: TouchEvent) => {
     if (!isMove.value) return
 
     const target = e.targetTouches[0]
@@ -109,8 +109,8 @@ export default function (
     }
   }
   const init = () => {
-    dom.value = $(domName) as any
-    domBox.value = $(boxName) as any
+    dom.value = $(domName) as HTMLElement
+    domBox.value = $(boxName) as HTMLElement
     if (dom.value) {
       dom.value.style.transition = 'transform 0.3s ease'
       domBox.value.addEventListener('touchstart', handleTouchStart)

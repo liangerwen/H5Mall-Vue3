@@ -53,10 +53,8 @@
 
 <script lang="ts">
   import { reactive, watch } from 'vue'
-  import { useRouter } from 'vue-router'
   export default {
     setup() {
-      const router = useRouter()
       const form = reactive({
         phone: '',
         prefix: '86',

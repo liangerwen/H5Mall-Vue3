@@ -1,4 +1,3 @@
-import { AxiosRequestConfig } from 'axios'
 import { MallResopnse } from '../config'
 import service from '../service'
 
