@@ -129,7 +129,7 @@
             </template>
           </div>
         </div>
-        <div class="flex flex-col">
+        <div class="flex flex-col mb-2footer">
           <mall-hr
             title="可能你还想要"
             background-color="rgba(243, 244, 246)"
@@ -150,7 +150,7 @@
     </van-popup>
     <div
       class="
-        absolute
+        fixed
         h-footer
         bottom-footer
         left-0
@@ -172,7 +172,7 @@
       ></mall-footer-bar>
     </div>
     <mall-back-top right="30" bottom="130" target=".mall-chart"></mall-back-top>
-    <mall-footer class="absolute left-0 bottom-0 right-0" />
+    <mall-footer class="fixed left-0 bottom-0 right-0" />
   </div>
 </template>
 

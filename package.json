@@ -66,11 +66,5 @@
     "vite": "^2.4.2",
     "vite-babel-plugin": "^0.0.2",
     "vue-tsc": "^0.0.24"
-  },
-  "lint-staged": {
-    "src/**/*.{js,ts,vue}": [
-      "npm run lint-fix",
-      "npm run lint"
-    ]
   }
 }

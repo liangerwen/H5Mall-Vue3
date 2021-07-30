@@ -72,7 +72,6 @@
         () => form.msgCode,
         (val) => {
           if (val.length === 6) {
-            console.log('验证码校验')
             form.showMask = false
             form.canInputMsgCode = false
             form.msgCode = ''

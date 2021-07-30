@@ -179,6 +179,7 @@
       const search = reactive({
         value: '',
         change: (val: string) => {
+          // eslint-disable-next-line
           console.log(val)
         },
         search: () => {

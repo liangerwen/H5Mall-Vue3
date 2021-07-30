@@ -1,10 +1,4 @@
 import { createRouter, createWebHashHistory } from 'vue-router'
-import Home from '@/pages/Home/index.vue'
-import Category from '@/pages/Category/index.vue'
-import Message from '@/pages/Message/index.vue'
-import Chart from '@/pages/Chart/index.vue'
-import Me from '@/pages/Me/index.vue'
-import Search from '@/pages/Search/index.vue'
 
 export default createRouter({
   // history: createWebHistory(),
@@ -18,27 +12,27 @@ export default createRouter({
     {
       path: '/home',
       name: 'Home',
-      component: Home
+      component: () => import('@/pages/Home/index.vue')
     },
     {
       path: '/category',
       name: 'Category',
-      component: Category
+      component: () => import('@/pages/Category/index.vue')
     },
     {
       path: '/message',
       name: 'Message',
-      component: Message
+      component: () => import('@/pages/Message/index.vue')
     },
     {
       path: '/chart',
       name: 'Chart',
-      component: Chart
+      component: () => import('@/pages/Chart/index.vue')
     },
     {
       path: '/me',
       name: 'Me',
-      component: Me
+      component: () => import('@/pages/Me/index.vue')
     },
     {
       path: '/login',
@@ -53,7 +47,7 @@ export default createRouter({
     {
       path: '/search',
       name: 'Search',
-      component: Search
+      component: () => import('@/pages/Search/index.vue')
     }
   ]
 })

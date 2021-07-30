@@ -10,7 +10,7 @@
 </template>
 
 <script lang="ts">
-  import { onMounted, onUnmounted, ref } from 'vue'
+  import { onActivated, onMounted, onUnmounted, ref } from 'vue'
   interface IProps {
     right: string | number | undefined
     bottom: string | number | undefined
@@ -76,6 +76,9 @@
           }
         }, 20)
       }
+      onActivated(() => {
+        show.value = false
+      })
       return { show, backTop }
     }
   }

@@ -27,9 +27,6 @@ export default defineConfig({
   server: {
     port: 8888,
     // open: true,
-    server: {
-      '/api': 'http://localhost:8888/api'
-    },
     hmr: {
       overlay: false
     }

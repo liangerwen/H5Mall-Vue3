@@ -1,23 +1,20 @@
 <template>
-  <div class="mall-container overflow-hidden flex flex-col">
+  <div class="mall-container overflow-hidden">
     <mall-header back>
       <mall-search @focus="search.handle" />
     </mall-header>
-    <div class="flex-auto flex border-t overflow-y-auto mb-footer">
-      <van-sidebar
-        v-model="active"
-        class="category-sidebar h-full w-1/4 overflow-hidden"
-      >
+    <div class="flex border-t overflow-y-auto mb-footer mall-body">
+      <van-sidebar v-model="active" class="category-sidebar h-full w-1/4">
         <div class="mall-sidebar-box">
           <van-sidebar-item
             v-for="(item, i) in categoryList"
             :key="i"
             :title="item.title"
-            @click="scrollToItem"
+            @click="scrollToItem(i)"
           />
         </div>
       </van-sidebar>
-      <div class="category-goods w-3/4 h-full flex flex-col overflow-hidden">
+      <div class="category-goods overflow-y-auto w-3/4 h-full flex flex-col">
         <div class="mall-category-box">
           <template v-if="categoryList[active]?.list">
             <div
@@ -48,14 +45,13 @@
         </div>
       </div>
     </div>
-    <mall-footer class="absolute left-0 bottom-0 right-0" />
+    <mall-footer class="fixed left-0 bottom-0 right-0" />
   </div>
 </template>
 
 <script lang="ts">
-  import { ref, reactive, onActivated } from 'vue'
-  import useTouchMove, { TouchMoveType } from '@/hooks/useTouchMove'
-  import { $, setTranslateY } from '@/utils/dom'
+  import { ref, reactive, onActivated, onDeactivated } from 'vue'
+  import { $, scrollAnimation } from '@/utils/dom'
   import { getCategory } from '@/http/Category'
   import { HTTP_STATUS } from '@/http/config'
   import { useRouter } from 'vue-router'
@@ -83,38 +79,29 @@
 
       //当前点击的类别
       const active = ref(0)
-
-      //sider添加滑动特效
-      const sidebarReset = useTouchMove(
-        '.mall-sidebar-box',
-        '.van-sidebar',
-        TouchMoveType.y,
-        160
-      )
-      //category添加滑动特效
-      const categoryset = useTouchMove(
-        '.mall-category-box',
-        '.category-goods',
-        TouchMoveType.y,
-        160
-      )
-
+      const timer = ref()
       const scrollToItem = (i: number) => {
-        sidebarReset()
-        categoryset()
+        active.value = i
         const scrollDom = $('.mall-sidebar-box') as HTMLElement
         const boxDom = $('.van-sidebar') as HTMLElement
+        const goodsBox = $('.category-goods') as HTMLElement
         const heightDiff =
           scrollDom.offsetHeight - boxDom.offsetHeight > 0
             ? scrollDom.offsetHeight - boxDom.offsetHeight
             : 0
-        const scrollHeight = i * 52
-        if (heightDiff < scrollHeight) {
-          setTranslateY(scrollDom, -heightDiff)
-        } else {
-          setTranslateY(scrollDom, -i * 52)
-        }
+        const item = $('.van-sidebar-item--select') as HTMLElement
+        const scrollHeight = i * item.offsetHeight
+        timer.value = scrollAnimation(
+          boxDom,
+          heightDiff < scrollHeight ? heightDiff : scrollHeight,
+          160
+        )
+        goodsBox.scrollTop = 0
       }
+
+      onDeactivated(() => {
+        clearInterval(timer.value)
+      })
 
       onActivated(() => {
         getCategoryList()

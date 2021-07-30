@@ -4,7 +4,7 @@
       <div
         v-if="back"
         @click="goBack"
-        class="flex justify-center items-center px-2"
+        class="flex justify-center items-center px-2 ml-2"
       >
         <van-icon
           name="arrow-left"
@@ -26,7 +26,7 @@
         @select="handleSelect"
       >
         <template #reference>
-          <div class="h-full px-2 flex justify-center items-center"
+          <div class="h-full px-2 mr-2 flex justify-center items-center"
             ><van-icon
               name="weapp-nav"
               class="text-gray-400"

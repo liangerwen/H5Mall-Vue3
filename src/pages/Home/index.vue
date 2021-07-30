@@ -57,19 +57,19 @@
             :key="i"
           >
             <img :src="item.img" class="w-full" />
-            <p class="flex flex-col mt-2"
+            <p class="flex flex-col mt-2 items-center"
               ><mall-price
                 :special="false"
                 :price="item.price"
                 lessdot
-                class="text-mm font-semibold"
+                class="text-xs leading-3 font-semibold"
               ></mall-price>
               <mall-price
                 :special="false"
                 :price="item.realPrice"
                 old
                 lessdot
-                class="text-mm mt-1"
+                class="text-xs leading-3 mt-1"
               ></mall-price
             ></p>
           </div>
@@ -78,7 +78,7 @@
     </div>
 
     <mall-goods
-      class="mt-2 mb-header"
+      class="mt-2 mb-footer"
       v-model:loading="list.loading"
       @load="list.load"
       :finished="list.finished"
@@ -87,7 +87,7 @@
       finished-text="到底了~~"
     ></mall-goods>
     <mall-back-top right="30" bottom="80" target=".mall-home"></mall-back-top>
-    <mall-footer class="absolute left-0 bottom-0 right-0" />
+    <mall-footer class="fixed left-0 bottom-0 right-0" />
   </div>
 </template>
 
@@ -226,7 +226,7 @@
     background-size: 100% auto;
   }
   .seckill-time {
-    width: 1.2rem;
+    width: 1rem;
     color: #fff;
     background-image: -webkit-linear-gradient(230deg, #ff6152, #fa2c19);
     background-image: linear-gradient(-140deg, #ff6152, #fa2c19);
@@ -234,7 +234,7 @@
     border-radius: 0.2rem;
     text-align: center;
     font-weight: 400;
-    font-size: 0.5rem;
+    font-size: 0.75rem;
     margin: 0 0.1rem;
   }
   .seckill-colon {

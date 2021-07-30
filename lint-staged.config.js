@@ -1,3 +1,3 @@
 module.exports = {
-  "*.{js,jsx,vue,ts,tsx}": "vue-cli-service lint",
-};
+  'src/**/*.{js,ts,vue}': ['npm run lint-fix', 'npm run lint']
+}

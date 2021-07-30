@@ -37,10 +37,6 @@
 .van-password-input__item {
   border-radius: 1rem;
 }
-.van-icon-search {
-  height: 100%;
-  line-height: 1.5rem !important;
-}
 
 .mall-bg {
   background-color: var(--mall-background-color);
@@ -49,4 +45,7 @@
   width: 100%;
   height: 100%;
   overflow: hidden auto;
+}
+.mall-body {
+  height: calc(100% - var(--mall-header-height) - var(--mall-footer-height));
 }

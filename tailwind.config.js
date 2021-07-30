@@ -23,7 +23,7 @@ module.exports = {
       margin: {
         header: 'var(--mall-header-height)',
         footer: 'var(--mall-footer-height)',
-        '2header': 'var(--mall-2footer-height)'
+        '2footer': 'var(--mall-2footer-height)'
       },
       inset: {
         footer: 'var(--mall-footer-height)'
