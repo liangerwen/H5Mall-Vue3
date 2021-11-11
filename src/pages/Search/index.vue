@@ -1,5 +1,5 @@
 <template>
-  <div class="w-full h-full flex flex-col">
+  <div class="flex flex-col w-full h-full">
     <mall-header showMenu>
       <mall-search
         v-model="search.value"
@@ -8,7 +8,7 @@
       />
       <template #right
         ><van-button
-          class="m-2 ml-0 px-4"
+          class="w-16 px-4 m-2 ml-0"
           round
           size="small"
           color="linear-gradient(to right, #ff6034, #ee0a24)"
@@ -18,7 +18,7 @@
         </van-button>
       </template>
     </mall-header>
-    <div class="mall-bg flex-auto flex flex-col p-4 overflow-y-auto">
+    <div class="flex flex-col flex-auto p-4 overflow-y-auto mall-bg">
       <div class="flex flex-col" v-if="history.list.length">
         <div class="flex justify-between">
           <h4 class="font-semibold">搜索历史</h4
@@ -32,13 +32,13 @@
         <div class="flex flex-wrap mt-2">
           <span
             class="
-              bg-white
-              rounded-2xl
               px-2
               py-1
               m-1
               text-sm
+              bg-white
               border border-gray-100
+              rounded-2xl
               van-ellipsis
             "
             v-for="(item, i) in history.list"
@@ -57,7 +57,7 @@
             @click="searchRecommend.tab = TabType.FIND"
             >搜索发现</h4
           >
-          <div class="h-2/5 w-1 transform scale-x-25 bg-gray-200 mx-4"></div>
+          <div class="w-1 mx-4 transform bg-gray-200 h-2/5 scale-x-25"></div>
           <h4
             :class="{
               'font-semibold border-rb-red relative':
@@ -69,25 +69,25 @@
         </div>
         <div
           v-if="searchRecommend.tab === TabType.FIND"
-          class="mt-2 flex flex-wrap"
+          class="flex flex-wrap mt-2"
         >
           <p
             v-for="(item, i) in searchRecommend.findList"
             :key="i"
-            class="w-1/2 text-sm mb-2 pr-2 van-ellipsis"
+            class="w-1/2 pr-2 mb-2 text-sm van-ellipsis"
             >{{ item.title }}</p
           >
         </div>
         <div
           v-if="searchRecommend.tab === TabType.HOT"
-          class="mt-2 flex flex-col"
+          class="flex flex-col mt-2"
         >
           <div
             v-for="(item, i) in searchRecommend.hotList"
             :key="i"
-            class="w-full h-14 m-1 flex relative"
+            class="relative flex w-full m-1 h-14"
           >
-            <img :src="item.img" alt="" class="w-14 h-14 rounded-lg" />
+            <img :src="item.img" alt="" class="rounded-lg w-14 h-14" />
             <i
               :class="{
                 'absolute top-0 left-0 rounded-tl rounded-tr-md rounded-br-none rounded-bl-md leading-4 text-center w-4 h-4 text-white text-sm font-semibold': true,
@@ -99,11 +99,11 @@
               >{{ i + 1 }}</i
             >
             <div
-              class="h-full ml-2 flex flex-auto flex-col justify-center"
+              class="flex flex-col justify-center flex-auto h-full ml-2"
               style="width: calc(100% - 4rem)"
             >
-              <div class="w-full flex"
-                ><p class="text-sm mb-1 van-ellipsis">{{ item.title }}</p
+              <div class="flex w-full"
+                ><p class="mb-1 text-sm van-ellipsis">{{ item.title }}</p
                 ><span
                   v-if="i < 3"
                   class="

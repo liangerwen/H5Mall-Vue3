@@ -49,3 +49,9 @@
 .mall-body {
   height: calc(100% - var(--mall-header-height) - var(--mall-footer-height));
 }
+
+.no-sidebar {
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}

@@ -8,7 +8,7 @@
         />
       </van-sticky>
 
-      <div class="flex justify-center items-center">
+      <div class="flex items-center justify-center">
         <van-swipe class="w-full" :autoplay="4000" :duration="300">
           <van-swipe-item class="px-4" v-for="(item, i) in swiper" :key="i">
             <img :src="item" alt="" class="w-full rounded-lg"
@@ -18,21 +18,21 @@
     </div>
 
     <div
-      class="flex justify-center items-center px-4 mt-3"
+      class="flex items-center justify-center px-4 mt-3"
       v-if="menuList.length"
     >
-      <div class="rounded-xl bg-white w-full">
+      <div class="w-full bg-white rounded-xl">
         <van-swipe class="w-full" :loop="false">
           <van-swipe-item v-for="(item, i) in menuList" :key="i">
-            <div class="flex flex-wrap pb-5 pt-2">
+            <div class="flex flex-wrap pt-2 pb-5">
               <a
                 v-for="(nav, key) in item"
                 :key="key"
                 :href="nav.url"
-                class="flex flex-col items-center text-center w-1/5 py-1"
+                class="flex flex-col items-center w-1/5 py-1 text-center"
               >
                 <img :src="nav.icon" alt="" class="w-3/5" />
-                <span class="text-sm mt-1">{{ nav.title }}</span>
+                <span class="mt-1 text-sm">{{ nav.title }}</span>
               </a>
             </div>
           </van-swipe-item>
@@ -40,36 +40,36 @@
       </div>
     </div>
     <div class="flex px-4 mt-3" v-if="seckill.info.time">
-      <div class="rounded-xl bg-white w-full p-2">
-        <div class="w-full flex items-center">
-          <van-icon name="clock-o" class="animate-shak mr-3 text-xl"></van-icon>
-          <p class="mr-2 font-medium text-sm">限时秒杀</p>
+      <div class="w-full p-2 bg-white rounded-xl">
+        <div class="flex items-center w-full">
+          <van-icon name="clock-o" class="mr-3 text-xl animate-shak"></van-icon>
+          <p class="mr-2 text-sm font-medium">限时秒杀</p>
           <div class="seckill-time">{{ hours }}</div>
           <span class="seckill-colon">:</span>
           <div class="seckill-time">{{ minutes }}</div>
           <span class="seckill-colon">:</span>
           <div class="seckill-time">{{ seconds }}</div>
         </div>
-        <div class="w-full flex items-center mt-2">
+        <div class="flex items-center w-full mt-2">
           <div
-            class="flex-auto px-2 w-1/5"
+            class="flex-auto w-1/5 px-2"
             v-for="(item, i) in seckill.info.goodList"
             :key="i"
           >
             <img :src="item.img" class="w-full" />
-            <p class="flex flex-col mt-2 items-center"
+            <p class="flex flex-col items-center mt-2"
               ><mall-price
                 :special="false"
                 :price="item.price"
                 lessdot
-                class="text-xs leading-3 font-semibold"
+                class="text-xs font-semibold leading-3"
               ></mall-price>
               <mall-price
                 :special="false"
                 :price="item.realPrice"
                 old
                 lessdot
-                class="text-xs leading-3 mt-1"
+                class="mt-1 text-xs leading-3"
               ></mall-price
             ></p>
           </div>
@@ -87,7 +87,7 @@
       finished-text="到底了~~"
     ></mall-goods>
     <mall-back-top right="30" bottom="80" target=".mall-home"></mall-back-top>
-    <mall-footer class="fixed left-0 bottom-0 right-0" />
+    <mall-footer />
   </div>
 </template>
 

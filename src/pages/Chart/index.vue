@@ -172,7 +172,7 @@
       ></mall-footer-bar>
     </div>
     <mall-back-top right="30" bottom="130" target=".mall-chart"></mall-back-top>
-    <mall-footer class="fixed left-0 bottom-0 right-0" />
+    <mall-footer />
   </div>
 </template>
 

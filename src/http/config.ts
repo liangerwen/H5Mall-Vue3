@@ -32,7 +32,7 @@ export enum HTTP_STATUS {
   SUCCESS = 1
 }
 
-export interface MallResopnse<T> {
+export interface MallResopnse<T = any> {
   code: HTTP_STATUS
   msg: string
   data: T

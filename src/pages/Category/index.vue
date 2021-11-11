@@ -4,7 +4,10 @@
       <mall-search @focus="search.handle" />
     </mall-header>
     <div class="flex border-t overflow-y-auto mb-footer mall-body">
-      <van-sidebar v-model="active" class="category-sidebar h-full w-1/4">
+      <van-sidebar
+        v-model="active"
+        class="category-sidebar no-sidebar h-full w-1/4"
+      >
         <div class="mall-sidebar-box">
           <van-sidebar-item
             v-for="(item, i) in categoryList"
@@ -14,7 +17,7 @@
           />
         </div>
       </van-sidebar>
-      <div class="category-goods overflow-y-auto w-3/4 h-full flex flex-col">
+      <div class="category-goods">
         <div class="mall-category-box">
           <template v-if="categoryList[active]?.list">
             <div
@@ -45,7 +48,7 @@
         </div>
       </div>
     </div>
-    <mall-footer class="fixed left-0 bottom-0 right-0" />
+    <mall-footer />
   </div>
 </template>
 
@@ -81,7 +84,6 @@
       const active = ref(0)
       const timer = ref()
       const scrollToItem = (i: number) => {
-        active.value = i
         const scrollDom = $('.mall-sidebar-box') as HTMLElement
         const boxDom = $('.van-sidebar') as HTMLElement
         const goodsBox = $('.category-goods') as HTMLElement
@@ -115,5 +117,17 @@
 <style lang="scss">
   .category-sidebar {
     background-color: var(--van-sidebar-background-color);
+  }
+  .category-goods {
+    display: flex;
+    flex-direction: column;
+    width: 75%;
+    height: 100%;
+    position: relative;
+    overflow: hidden auto;
+    -webkit-overflow-scrolling: touch;
+  }
+  .van-sidebar {
+    -webkit-overflow-scrolling: touch;
   }
 </style>
